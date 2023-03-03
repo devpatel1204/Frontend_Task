@@ -1,4 +1,4 @@
-import { useState, React } from 'react';
+import { useState, React ,useEffect } from 'react';
 import JobFormPage1 from './JobFormPage1';
 import JobFormPage2 from './JobFormPage2';
 
@@ -6,24 +6,28 @@ const JobPage =({buttonText})=>{
     const[showModal,setShowModal]= useState(false)
     const [page, setPage] = useState(0);
     const [formData, setFormData] = useState({
+      page:1,
       jobTitle: "",
       companyName: "",
       industry: "",
       location: "",
       remoteType: "",
-      experience: "",
-      minimumSalary:"",
-      maximumSalary:"",
-      totalEmployee:"",
+      maximumExperience: Number,
+      mainimumExperience: Number,
+      minimumSalary:Number,
+      maximumSalary:Number,
+      totalEmployee:Number,
       applyType:"",
     });
   
-    const FormTitles = ["Sign Up", "Personal Info", "Other"];
+    const FormTitles = ["Sign Up", "Personal Info"];
 
     const PageDisplay = () => {
-        if (page === 0) {
+        if (formData.page === 1) {
+          console.log("1st page")
             return <JobFormPage1 formData={formData} setFormData={setFormData} />;
-        } else if (page === 1) {
+        } else if(formData.page==2) {
+          console.log("2nd page")
             return <JobFormPage2 formData={formData} setFormData={setFormData} />;
         }
     };
@@ -41,41 +45,9 @@ const JobPage =({buttonText})=>{
               <div
                 className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
               >
-                <div className="relative w-auto my-6 mx-auto max-w-3xl">
-                <div className="form">
-      <div className="progressbar">
-       
-      </div>
-      <div className="form-container">
-        <div className="header">
-          <h1>{FormTitles[page]}</h1>
-        </div>
-        <div className="body">{PageDisplay()}</div>
-        <div className="footer">
-          <button
-            disabled={page == 0}
-            onClick={() => {
-              setPage((currPage) => currPage - 1);
-            }}
-          >
-            Prev
-          </button>
-          <button
-            onClick={() => {
-              if (page === FormTitles.length - 1) {
-                alert("FORM SUBMITTED");
-                console.log(formData);
-              } else {
-                setPage((currPage) => currPage + 1);
-              }
-            }}
-          >
-            {page === FormTitles.length - 1 ? "Submit" : "Next"}
-          </button>
-        </div>
-      </div>
-    </div>
-                </div>
+               
+              <div>{PageDisplay()}</div>
+              
               </div>
               <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
             </>
