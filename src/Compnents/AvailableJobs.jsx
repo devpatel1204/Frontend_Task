@@ -101,11 +101,11 @@ const AvailableJobs =(props)=>{
     ];
     return(
         <>
-          <div class="justify-center items-center  overflow-x-hidden overflow-y-auto  absolute    left-20 top-20 mt-20 columns-2 w-5/6 pl-0">
+          <div class="w-full justify-center items-center  overflow-x-hidden overflow-y-auto  absolute   pl-24 left-20 top-20  columns-2 w-5/6 pl-0">
 
                 {posts.map((items, key) => (
                     <>
-                     <div className="w-full rounded-lg shadow-md bg-white ml-20 mr-20 mb-5">
+                     <div className=" justify-center items-center w-full rounded-lg shadow-md bg-white  mr-20 mb-5">
                     <div class="flex flex-row flex-wrap w-full">
                     <div class="w-1/6 left-15 ">
                     <img
