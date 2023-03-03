@@ -101,7 +101,7 @@ const AvailableJobs =(props)=>{
     ];
     return(
         <>
-          <div class=" left-20 top-20 mt-20 columns-2 w-5/6 pl-0">
+          <div class="justify-center items-center  overflow-x-hidden overflow-y-auto  absolute    left-20 top-20 mt-20 columns-2 w-5/6 pl-0">
 
                 {posts.map((items, key) => (
                     <>
