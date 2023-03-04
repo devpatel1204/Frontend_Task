@@ -20,6 +20,8 @@ const JobFormPage2 =({formData,setFormData})=>{
         <>
         {
             displayJobs ===true?<AvailableJobs applyType = {formData.applyType}></AvailableJobs>:
+            <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+               
             <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 ">
             <div>
             <span class="display-block top-3">
@@ -69,6 +71,8 @@ const JobFormPage2 =({formData,setFormData})=>{
             <button type="submit" class="inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500" onClick={saveData}>Save</button>
           </div>
           </div>
+          </div>
+          
 }
        </>
     )

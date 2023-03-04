@@ -10,6 +10,9 @@ const JobFormPage1 =({formData,setFormData})=>{
   console.log(formData)
     return(
         <>
+        <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+>
+               
       <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 ">
        <div>
        <span class="display-block top-3">
@@ -44,6 +47,7 @@ const JobFormPage1 =({formData,setFormData})=>{
        </div>
        <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
             <button class="inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"  name="page" value={2} onClick={(e)=>handleOnChange(e)}>Next</button>
+          </div>
           </div>
           </div>
        </>
