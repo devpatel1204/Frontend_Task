@@ -18,7 +18,7 @@ const AvailableJobs = (props) => {
         <>
             {
                 jobs ?
-                    <div class="grid grid-cols-1  gap-4 p-4 overflow-y-auto absolute overflow-x-hidden w-full z-50 md:grid-cols-2">
+                    <div class="grid grid-cols-1  gap-4 p-4 overflow-y-auto absolute overflow-x-hidden w-full z-50 md:grid-cols-2 sm:grid-cols-2">
                         {jobs.map((items, key) => (
                             <div class="flex flex-col bg-white border rounded-lg mx-5 md:flex-row px-4 py-6" key={key}>
 

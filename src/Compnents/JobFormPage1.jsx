@@ -20,8 +20,8 @@ const JobFormPage1 = ({ formData, setFormData }) => {
   };
   const nextPage = (event) => {
 
-    if (formData.jobTitle != "" && formData.industry != "" && formData.companyName != "") {
-      const { name, value } = event.target;
+    if (formData.jobTitle !== "" && formData.industry !== "" && formData.companyName !== "") {
+      const { name } = event.target;
       setFormData({ ...formData, [name]: 2 });
     }
     if (formData.jobTitle === "") {
