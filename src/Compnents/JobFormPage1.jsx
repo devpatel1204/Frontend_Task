@@ -2,19 +2,19 @@ import { useState } from "react";
 
 
 const JobFormPage1 = ({ formData, setFormData }) => {
-  const [isTitleFilled,setIsTitleFilled]= useState(false)
-  const [isCompanyNameFilled,setIsCompanyNAmeFilled]= useState(false)
-  const [isIndustryFilled,setIsIndustryFilled]= useState(false)
+  const [isTitleFilled, setIsTitleFilled] = useState(false)
+  const [isCompanyNameFilled, setIsCompanyNAmeFilled] = useState(false)
+  const [isIndustryFilled, setIsIndustryFilled] = useState(false)
   const handleOnChange = event => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
-    if(formData.jobTitle!==""){
+    if (formData.jobTitle !== "") {
       setIsTitleFilled(false)
     }
-    if(formData.companyName!==""){
+    if (formData.companyName !== "") {
       setIsCompanyNAmeFilled(false)
     }
-    if(formData.industry!==""){
+    if (formData.industry !== "") {
       setIsIndustryFilled(false)
     }
   };
@@ -24,13 +24,13 @@ const JobFormPage1 = ({ formData, setFormData }) => {
       const { name, value } = event.target;
       setFormData({ ...formData, [name]: 2 });
     }
-    if(formData.jobTitle===""){
+    if (formData.jobTitle === "") {
       setIsTitleFilled(true)
     }
-    if(formData.companyName===""){
+    if (formData.companyName === "") {
       setIsCompanyNAmeFilled(true)
     }
-    if(formData.industry===""){
+    if (formData.industry === "") {
       setIsIndustryFilled(true)
     }
 
@@ -49,34 +49,34 @@ const JobFormPage1 = ({ formData, setFormData }) => {
             <div class="text-xl">
               Create a Job
               <div>
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white pt-6" >Job title<span className="text-red-600">*</span></label>
-                <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ex. UX UI Designer" name="jobTitle" value={formData.jobTitle} onChange={(e) => handleOnChange(e)} required />
+                <label class="block mb-2 text-sm font-medium text-gray-900  pt-6" >Job title<span className="text-red-600">*</span></label>
+                <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="ex. UX UI Designer" name="jobTitle" value={formData.jobTitle} onChange={(e) => handleOnChange(e)} required />
                 {
-                  isTitleFilled&&<p class="text-red-500 text-xs pt-1">This field is required</p>
+                  isTitleFilled && <p class="text-red-500 text-xs pt-1">This field is required</p>
                 }
               </div>
               <div>
-                <label class="pt-6 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Company name<span className="text-red-600">*</span></label>
-                <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ex. Google" name="companyName" value={formData.companyName} onChange={(e) => handleOnChange(e)} required />
+                <label class="pt-6 block mb-2 text-sm font-medium text-gray-900 ">Company name<span className="text-red-600">*</span></label>
+                <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="ex. Google" name="companyName" value={formData.companyName} onChange={(e) => handleOnChange(e)} required />
                 {
-                  isCompanyNameFilled&&<p class="text-red-500 text-xs pt-1">This field is required</p>
+                  isCompanyNameFilled && <p class="text-red-500 text-xs pt-1">This field is required</p>
                 }
               </div>
               <div>
-                <label class="block pt-6 mb-2 text-sm font-medium text-gray-900 dark:text-white">Industry<span className="text-red-600">*</span></label>
-                <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ex. Information Technology" name="industry" value={formData.industry} onChange={(e) => handleOnChange(e)} required />
+                <label class="block pt-6 mb-2 text-sm font-medium text-gray-900 ">Industry<span className="text-red-600">*</span></label>
+                <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="ex. Information Technology" name="industry" value={formData.industry} onChange={(e) => handleOnChange(e)} required />
                 {
-                  isIndustryFilled&&<p class="text-red-500 text-xs pt-1">This field is required</p>
+                  isIndustryFilled && <p class="text-red-500 text-xs pt-1">This field is required</p>
                 }
               </div>
               <div class="grid gap-6 mb-6 md:grid-cols-2">
                 <div>
-                  <label class="block pt-6 mb-2 text-sm font-medium text-gray-900 dark:text-white">Location</label>
-                  <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ex. Chennai" name="location" value={formData.location} onChange={(e) => handleOnChange(e)} />
+                  <label class="block pt-6 mb-2 text-sm font-medium text-gray-900 ">Location</label>
+                  <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="ex. Chennai" name="location" value={formData.location} onChange={(e) => handleOnChange(e)} />
                 </div>
                 <div>
-                  <label class="block pt-6 mb-2 text-sm font-medium text-gray-900 dark:text-white">Remote Type</label>
-                  <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ex. in-office" name="remoteType" value={formData.remoteType} onChange={(e) => handleOnChange(e)} />
+                  <label class="block pt-6 mb-2 text-sm font-medium text-gray-900 ">Remote Type</label>
+                  <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="ex. in-office" name="remoteType" value={formData.remoteType} onChange={(e) => handleOnChange(e)} />
                 </div>
               </div>
             </div>
