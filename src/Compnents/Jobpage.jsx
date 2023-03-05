@@ -12,11 +12,11 @@ const JobPage =({buttonText})=>{
       industry: "",
       location: "",
       remoteType: "",
-      maximumExperience: Number,
-      mainimumExperience: Number,
-      minimumSalary:Number,
-      maximumSalary:Number,
-      totalEmployee:Number,
+      maximumExperience: "",
+      mainimumExperience: "",
+      minimumSalary:"",
+      maximumSalary:"",
+      totalEmployee:"",
       applyType:"",
     });
   
@@ -34,7 +34,7 @@ const JobPage =({buttonText})=>{
       return (
         <>
           <button
-            className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+            class="bg-sky-500 text-white active:bg-sky-600 ml-5 mt-5 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
             type="button"
             onClick={() => setShowModal(true)}
           >
@@ -45,7 +45,7 @@ const JobPage =({buttonText})=>{
               
               <div>{PageDisplay()}</div>
           
-              <div className="opacity-25  overflow-x-hidden fixed inset-0 z-40 bg-black"></div>
+              <div class="opacity-25  overflow-x-hidden fixed inset-0 z-40 bg-black"></div>
             </>
           ) : null}
         </>
