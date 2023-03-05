@@ -8,8 +8,8 @@ const JobFormPage2 = ({ formData, setFormData }) => {
         setFormData({ ...formData, [name]: value });
     };
     const [displayJobs, setDisplayJobs] = useState(false);
-    const saveData = () => {
-        axios.post('https://640235adf61d96ac486619fa.mockapi.io/jobs', formData)
+    const saveData = async () => {
+       await axios.post('https://640235adf61d96ac486619fa.mockapi.io/jobs', formData)
             .then()
             .catch(error => console.log(error))
         setDisplayJobs(true);
