@@ -6,7 +6,7 @@ const AvailableJobs = (props) => {
     const [jobs, setJobs] = useState();
     const getJobs = async () => {
         try {
-            const fetchData = await axios.get("https://640235adf61d96ac486619fa.mockapi.io/jobs", { params: { applyType: props.applyType } })
+            const fetchData = await axios.get("https://640235adf61d96ac486619fa.mockapi.io/jobs")
             setJobs(fetchData.data)
             console.log(fetchData.data)
         } catch (error) {
@@ -122,7 +122,7 @@ const AvailableJobs = (props) => {
                             <div class="flex flex-wrap">
                                 <div class="w-1/6 left-15 ">
                                     <img
-                                        class="w-10 h-10 left-15 top-10 ml-8 mt-6"
+                                        class="w-10 h-10  ml-8 mt-6 flex"
                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Netflix_icon.svg/1200px-Netflix_icon.svg.png"
                                         alt="image"
                                     />
@@ -132,10 +132,10 @@ const AvailableJobs = (props) => {
                                     <p className="text-2xl font-semibold tracking-tight">
                                         {items.companyName}
                                     </p>
-                                    <p className=" text-base mb-2 leading-normal">
+                                    <p className=" text-base leading-normal">
                                         {items.industry}
                                     </p>
-                                    <p className="text-slate-300  text-base">
+                                    <p className="text-slate-300 mb-2 font-light">
                                         {items.location}
                                     </p>
                                     <p className=" text-base">
@@ -150,13 +150,18 @@ const AvailableJobs = (props) => {
                                     <p className=" text-base">
                                         {items.totalEmployee} employees
                                     </p>
-                                    <button className="w-28 h-10 mb-1 text-sm text-blue-100 bg-blue-500 hover:bg-white hover:text-blue-500 rounded shadow border">
-                                        Read more
+    
+                                    {console.log(items.applyType)}
+                                    {
+                                    items.applyType==="QuickApply"?
+                                    <button className="w-28 mt-2 mb-2 h-10 mb-1 text-sm text-white 0 bg-sky-500 hover:bg-white hover:text-blue-500 rounded shadow border">
+                                        Apply Now
                                     </button>
-                                    
-                                    <button class="w-36 h-10 ml-6 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white  border border-blue-500 hover:border-transparent rounded">
-                                        {items.applyType}
+                                    :
+                                    <button class="w-36 mt-2 mb-2 h-10 h-10 bg-transparent hover:bg-sky-500 text-sky-400 hover:text-white  border border-sky-400	 hover:border-transparent rounded">
+                                        External apply
                                     </button>
+                                    }
     
                                 </div>
                             </div>
