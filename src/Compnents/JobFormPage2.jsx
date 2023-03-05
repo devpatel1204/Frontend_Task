@@ -20,7 +20,6 @@ const JobFormPage2 = ({ formData, setFormData }) => {
                 displayJobs === true ? <AvailableJobs applyType={formData.applyType}></AvailableJobs> :
                     <div class="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                         <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 ">
-                            <form>
                                 <div>
                                     <span class="display-block top-3">
                                         <span class="float-right right-0 h-16 w-16 boldctext-base">step 2</span>
@@ -69,7 +68,6 @@ const JobFormPage2 = ({ formData, setFormData }) => {
                                 <div class=" float-right">
                                     <button type="submit" class="inline-flex justify-center rounded-md bg-sky-500 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400 w-16" onClick={saveData}>Save</button>
                                 </div>
-                            </form>
                         </div>
                     </div>
 
