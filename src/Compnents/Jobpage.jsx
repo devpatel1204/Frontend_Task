@@ -24,10 +24,8 @@ const JobPage =({buttonText})=>{
 
     const PageDisplay = () => {
         if (formData.page === 1) {
-          console.log("1st page")
             return <JobFormPage1 formData={formData} setFormData={setFormData} />;
         } else if(formData.page==2) {
-          console.log("2nd page")
             return <JobFormPage2 formData={formData} setFormData={setFormData} />;
         }
     };
